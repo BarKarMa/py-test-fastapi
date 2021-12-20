@@ -14,4 +14,4 @@
 ініціюємо файл і в ньому апп ( app.main - перша частина перехід у папку де лежить Мейн) 
 
 5. uvicorn app.main:app  
-(можна одразу на порті запустит який треба "app.main:app --port 7001" "uvicorn app.main:app --reload --host 0.0.0.0 --port 7001")
+(можна одразу на порті запустит який треба "uvicorn app.main:app --port 7001" "uvicorn app.main:app --reload --host 0.0.0.0 --port 7001")
