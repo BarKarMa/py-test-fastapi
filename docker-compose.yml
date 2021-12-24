@@ -5,7 +5,7 @@ services:
     build: .
     container_name: py-test-fastapi
     ports:
-      - "8000:001"
+      - "3000:3000"
 
     command: bash -c "uvicorn app.main:app"
     env_file:
