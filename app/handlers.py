@@ -9,16 +9,16 @@ from starlette import status
 
 router = APIRouter()
 
-@router.post('/')
-def index():
-  return {'status': "OK"}
+# @router.post('/')
+# def index():
+#   return {'status': "OK"}
 
 
 @router.post('/login', name='user:login')
 def login(user_form: UserLoginForm = Body(..., embed=True), database=Depends(connect_db) ):
   user = database.query(User).filter(User.email == user_form.email).one_or_none()
   if not user or get_password_hash(user_form.password) != user.password:
-    return {      'error': 'Email/password invalid'}
+    return {'error': 'Email/password invalid'}
   
   auth_token = AuthToken(token=str(uuid.uuid4()), user_id=user.id)
   database.add(auth_token)
