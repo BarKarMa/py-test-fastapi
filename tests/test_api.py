@@ -8,7 +8,7 @@ class APITestCase(TestCase):
 
   def setUp(self):
     self.client = TestClient(web_app)
-    
+
 
   def test_main_url(self):
     response = self.client
