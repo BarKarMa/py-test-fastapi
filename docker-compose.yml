@@ -4,6 +4,7 @@ services:
   app:
     build: .
     container_name: fastapi-app
+<<<<<<< HEAD
     network_mode: host 
     ports:
       - "8000:8000"
@@ -12,3 +13,13 @@ services:
       - .env
     volumes:
       - ./fastapi_app.db:/app/fastapi_app.db:delegated
+=======
+    network_mode: host
+    ports:
+      - "8000:8000"
+    command: bash -c "uvicorn app.main:app"
+    env_file:
+      - .env
+    volumes:
+      - ./fastapi_app.db:/app/fastapi_app.db:delegated
+>>>>>>> f130efcae925874042a2168b435e1e1a2cfab4f2

@@ -10,8 +10,15 @@
 перевірити чи всі пакети встановлені
 4. pip list 
 
-
 ініціюємо файл і в ньому апп ( app.main - перша частина перехід у папку де лежить Мейн) 
 
 5. uvicorn app.main:app  
 (можна одразу на порті запустит який треба "uvicorn app.main:app --port 7001" "uvicorn app.main:app --reload --host 0.0.0.0 --port 7001")
+
+6. за допомогою докера
+docker build -t py-test-fastapi .
+
+7. запуск докером
+docker run -p 8000:8000 --name my-api py-test-fastapi
+
+8. щоб зайти заходимо на localhost:8000
